@@ -1,0 +1,128 @@
+.Wrapper {
+    width: 80%;
+    margin: 40px auto 0;
+}
+
+.ContainerContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LeftContent {
+    width: 60%;
+}
+
+.RightContent {
+    width: 40%;
+}
+
+.InfoProduct {
+    display: none;
+}
+
+
+.ContainerProduct {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.ItemProduct {
+    flex: 20%;
+    max-width: 20%;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 16px;
+    text-align: center;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border: solid 0.2px rgb(243, 238, 238);
+}
+
+.ItemProduct:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border: solid 5px white;
+}
+
+@media (max-width: 1200px) {
+    .ItemProduct {
+        flex: 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .ItemProduct {
+        flex: 33%;
+        max-width: 33%;
+
+    }
+
+    .LeftContent {
+        width: 100%;
+    }
+
+    .RightContent {
+        display: none;
+    }
+
+    .InfoProduct {
+        display: block;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .ItemProduct {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+}
+
+.Content {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    text-overflow: clip;
+
+}
+
+.Contenthidden {
+    position: absolute;
+    bottom: -10px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(255 255 255/0), rgba(255 255 255/62.5), rgba(255 255 255/1));
+    height: 110px;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.DisplayContent {
+    border: 1px solid #2f80ed;
+    border-radius: 5px;
+    color: #2f80ed;
+    margin: 20px auto 0;
+    width: 40%;
+    padding: 3px 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.SetContent {
+    display: block;
+    height: auto;
+    overflow: inherit;
+    text-overflow: inherit;
+}
+
+.SetContenthidden {
+    position: inherit;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    padding-top: 0px;
+}

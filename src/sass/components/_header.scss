@@ -1,0 +1,485 @@
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  background-color: rgb(26, 148, 255);
+  overflow: hidden;
+  z-index: 99;
+
+  .navbar {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    width: 60px;
+    max-height: auto;
+    background-color: rgb(239, 239, 239);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+
+    &.showNavbar {
+      opacity: 1;
+      visibility: visible;
+      @include tablet {
+        display: none;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .show-note:hover {
+      .note {
+        display: block;
+      }
+    }
+
+    &__item {
+      @include flex(center, center);
+      position: relative;
+      top: 0;
+      left: 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+      padding: 12px;
+      margin-bottom: 4px;
+
+      &__detail {
+        @include flex(center, center);
+        position: absolute;
+        top: 10%;
+        left: 115%;
+        width: 10rem;
+        height: 30px;
+        border-radius: 4px;
+        padding: 0px 2px;
+        background-color: red;
+        display: none;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: -16px;
+          border: 8px solid;
+          border-color: transparent red transparent transparent;
+        }
+
+        span {
+          font-size: 13px;
+          font-weight: 500;
+          margin-left: 6px;
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 0, 0, 0.848);
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .navbar__social {
+    position: fixed;
+    top: calc($header-height + 20px);
+    right: 0;
+    width: 50px;
+    max-height: auto;
+    z-index: 100;
+    cursor: pointer;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &__item {
+      @include flex(center, center);
+      $size: 50px;
+      width: $size;
+      height: $size;
+      padding: 20px;
+      margin-bottom: 4px;
+      border-radius: 50%;
+      background-color: rgb(26, 148, 255);
+
+      &:nth-child(3) {
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+      }
+
+      &:last-child {
+        background-color: red;
+      }
+
+      &-icon {
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+  }
+
+  @include tablet {
+    height: $header-tablet-height;
+
+    &__menu {
+      @include flex(center, space-between);
+
+      &__direct,
+      &__action {
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      &__input {
+        width: 80%;
+      }
+
+      &__action {
+        @include flex(center, center);
+        background-color: #fff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+
+        &-icon {
+          color: rgba(0, 0, 255, 0.568);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    height: $header-mobile-height;
+
+    &__menu {
+      @include flex(center, space-between);
+
+      &__direct,
+      &__action {
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      &__input {
+        width: 60%;
+        height: 36px;
+      }
+
+      &__action {
+        @include flex(center, center);
+        background-color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        &-icon {
+          color: rgba(0, 0, 255, 0.568);
+        }
+      }
+    }
+  }
+
+  &__top {
+    @include flex(center, space-between);
+    height: 100%;
+    padding: 10px 0;
+
+    &__logo {
+      width: 10%;
+      margin-right: 20px;
+
+      img {
+        $size: 100px;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+      }
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__search {
+      cursor: pointer;
+      margin-right: 20px;
+      width: 45%;
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__action {
+      position: relative;
+      width: 50%;
+      height: 80px;
+      padding: 5px 10px;
+      @include flex(center, space-between);
+      background-color: rgb(22, 124, 214);
+      border-radius: 4px;
+
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      &__item {
+        @include flex(center, space-between);
+
+        &-icon {
+          width: 5rem;
+          height: 5rem;
+          background-color: #fff;
+          border-radius: 50%;
+          @include flex(center, center);
+          color: rgb(26, 148, 255);
+          font-size: 2rem;
+          margin-right: 10px;
+        }
+
+        &-detail {
+          @include flex(center, center);
+          width: auto;
+          color: #fff;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &__number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: yellow;
+          }
+        }
+
+        &__total-card {
+          position: absolute;
+          top: 12px;
+          right: 76px;
+          width: 15px;
+          height: 15px;
+          background-color: yellow;
+          border-radius: 50%;
+          @include flex(center, center);
+          font-size: 11px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    @include flex(center, space-between);
+    @include tablet {
+      display: none;
+    }
+
+    &__item {
+      @include flex(center, center);
+      padding: 6px 12px;
+      background-color: #fff;
+      border-radius: 4px;
+      width: 16%;
+      cursor: pointer;
+
+      &:first-child {
+        text-transform: uppercase;
+        background-color: yellow;
+      }
+
+      &-icon {
+        margin-right: 6px;
+        font-size: 1.5rem;
+      }
+
+      &-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.toggle {
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(142, 136, 136, 0.222);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &__wrapper {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(255, 253, 253);
+    padding: 20px;
+
+    @include mobile {
+      width: 100%;
+      padding: 10px;
+    }
+
+    &__support {
+      @include flex(center, space-around);
+      cursor: pointer;
+      border-bottom: 1px dashed rgb(80, 47, 47);
+      padding: 10px;
+
+      &__item {
+        @include flex(center, center);
+        flex-direction: column;
+
+        &-icon {
+          font-size: 36px;
+          color: rgba(9, 133, 249, 0.96);
+          margin-bottom: 10px;
+          transform: scale(1);
+          transition: transform 0.5s ease;
+
+          &:hover {
+            transform: scale(1.3);
+          }
+
+          @include mobile {
+            font-size: 20px;
+          }
+        }
+
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    &__list {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
+      border-bottom: 1px dashed rgb(80, 47, 47);
+      cursor: pointer;
+
+      &__heading {
+        font-size: 20px;
+        font-weight: 600;
+        color: rgb(85, 140, 218);
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+
+      &__item {
+        @include flex(center, flex-start);
+        padding: 8px 0;
+        &:hover {
+          background-color: rgba(136, 136, 136, 0.499);
+        }
+
+        &-icon {
+          font-size: 16px;
+          margin-right: 6px;
+          width: 20px;
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+
+        &-title {
+          font-weight: 500;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    &__policy {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
+      cursor: pointer;
+
+      &__item {
+        @include flex(center, flex-start);
+        padding: 8px 0;
+        &:hover {
+          background-color: rgba(136, 136, 136, 0.499);
+        }
+
+        &:first-child {
+          color: red;
+        }
+
+        &-icon {
+          font-size: 16px;
+          margin-right: 6px;
+          width: 20px;
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+
+        &-title {
+          font-weight: 500;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,132 @@
+.footer {
+  padding-top: 70px;
+  font-size: 1.4rem;
+  @include tablet {
+    font-size: 1.4rem;
+    padding-top: 70px;
+    padding-bottom: 0;
+  }
+
+  @include mobile {
+    font-size: 1.2rem;
+    padding-top: 70px;
+    padding-bottom: 0;
+  }
+  &__title {
+    position: relative;
+    font-weight: bold;
+    font-size: 1.75rem;
+    padding: 10px 0;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-bottom: 2px solid rgb(26, 148, 255);
+      width: 35%;
+    }
+  }
+
+  &__content {
+    padding: 10px 0;
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    &__showroom {
+      &__detail {
+        padding-bottom: 20px;
+        line-height: 1.5;
+
+        &__name {
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+
+      &__social {
+        margin-top: -10px;
+
+        &__icon {
+          font-size: 30px;
+          margin-right: 15px;
+          color: #fff;
+          background-color: rgba(0, 0, 255, 0.468);
+          transform: scale(1) rotate(0deg);
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(255, 0, 0, 0.59);
+            transform: scale(1.5) rotate(5deg);
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+    }
+
+    &__policy,
+    &__sale {
+      &__item {
+        color: rgba(0, 0, 255, 0.94);
+        margin-bottom: 10px;
+        font-weight: 600;
+
+        &:hover {
+          color: rgb(26, 148, 255);
+        }
+      }
+    }
+
+    &__support {
+      &__contact {
+        p {
+          font-size: 1.5rem;
+          font-weight: 500;
+          padding: 3px 0;
+
+          @include mobile {
+            font-size: 1.1rem;
+          }
+        }
+        &__number {
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: red;
+        }
+      }
+
+      &__logo {
+        width: 55%;
+
+        @include mobile {
+          width: 35%;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    @include flex(center, space-between);
+    padding: 20px 0;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

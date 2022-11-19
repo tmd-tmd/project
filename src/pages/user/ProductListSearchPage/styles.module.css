@@ -1,0 +1,49 @@
+.Container {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.ItemProduct {
+    flex: 15%;
+    max-width: 15%;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 16px;
+    text-align: center;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border: solid 0.2px rgb(243, 238, 238);
+}
+
+.ItemProduct:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border: solid 5px white;
+}
+
+
+@media (max-width: 960px) {
+
+    .ItemProduct {
+        flex: 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .ItemProduct {
+        flex: 33%;
+        max-width: 33%;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .ItemProduct {
+        flex: 50%;
+        max-width: 50%;
+    }
+}

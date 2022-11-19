@@ -1,0 +1,143 @@
+.WrapperProduct {
+    width: 80%;
+    margin: 0 1rem;
+}
+
+.ContainerProduct {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+
+}
+
+.ItemProduct {
+    flex: 20%;
+    max-width: 20%;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 16px;
+    text-align: center;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border: solid 0.2px rgb(243, 238, 238);
+}
+
+.ItemProduct:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border: solid 5px white;
+}
+
+@media (max-width: 1200px) {
+    .ItemProduct {
+        flex: 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .ItemProduct {
+        flex: 25%;
+        max-width: 25%;
+
+    }
+
+    .WrapperProduct {
+        width: 100%;
+
+    }
+
+    .FilterContainer {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .ItemProduct {
+        flex: 33%;
+        max-width: 33%;
+    }
+
+    .WrapperProduct {
+        width: 100%;
+
+    }
+
+    .FilterContainer {
+        display: none;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .ItemProduct {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    .WrapperProduct {
+        width: 100%;
+
+    }
+
+    .FilterContainer {
+        display: none;
+    }
+
+}
+
+
+.FilterContainer {
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    padding: 0 8px;
+    background-color: #efefef;
+    width: 20%;
+    z-index: 9;
+}
+
+.FilterItem {
+    border: solid 0.5px rgb(229, 207, 207);
+    width: 100%;
+    height: 50px;
+    line-height: 45px;
+    color: black;
+    padding: 2px 12px;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 8px 0px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.ClickChangeFilterItem {
+    border-left: solid 3px #378fe1;
+    border-bottom: solid 1px #378fe1;
+    transition-duration: 0.4s;
+    color: #378fe1;
+}
+
+.DropdownContainer {
+    border: solid 1px rgb(197, 180, 180);
+    display: none;
+    position: relative;
+    padding: 12px;
+    min-width: 100%;
+    overflow: auto;
+    z-index: 1;
+}
+
+.DropdownCompanyItem {
+    width: 100%;
+    margin-left: 8px !important;
+}
+
+.Show {
+    display: block;
+}
